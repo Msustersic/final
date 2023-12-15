@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es-AR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Todas las Inteligencias</title>
+  <link rel="icon" type="image/x-icon" href="{% static './media/icons/logo_g19.png' %}">
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
+  <meta name="keywords" content="">
+  <meta name="description" content="Front-End del trabajo práctico del curso Full-Stack Python 2023 2C - Codo a Codo">
+  <meta name="author" content="Alejo Podbielski , Matías Andrés Sustersic, Julián Albornoz, Mario Lerman">
+
+  <link rel="stylesheet" href="{% static './css/styles.css' %}" />
+</head>
+
+<body>
+  <header id="headerPri">
+
+    <div>
+      <img src="{% static './media/icons/logo_g19.png' %}" width="55" height="55" alt="Logo del Portfolio - Grupo-19"
+        title="Grupo-19" />
+    </div>
+    
+    <h1>IAs list</h1>
+    <nav id="menuPri">
+      <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="{% url 'store:all' %}">IAs</a></li>
+        <li><a href="{% url 'comentarios' %}">Comentarios</a></li>
+        {% if user.is_authenticated %}
+            <li><a href="{% url 'logout' %}"><i class="bi bi-x-square"></i></a></li>
+        {% else %}
+            <li><a href="{% url 'login' %}"><i class="bi bi-person-circle"></i></a></li>
+        {% endif %}
+      </ul>
+    </nav>
+
+    <button id="btnMenuPri" type="button"></button>
+
+  </header>
+
+  <main>
+    <section>
+
+        <div>
+         <p>¡Hola a todos! Somos un equipo de 4 desarrolladores apasionados por la tecnología.  te invitamos a explorar el mundo de las IAs. 
+          aca podras ver las mejores y más innovadoras IAs de internet, las cuales pueden ayudarte a resolver problemas del dia a dia</p>
+          <br>
+          <p>La Inteligencia Artificial (IA), en el contexto de las ciencias de la computación, es una disciplina y un conjunto de capacidades 
+            cognoscitivas e intelectuales expresadas por sistemas informáticos o combinaciones de algoritmos cuyo propósito es la creación de 
+            máquinas que imiten la inteligencia humana para realizar tareas, y que pueden mejorar conforme recopilen información1. 
+            La IA es una rama de la ciencia informática que tiene como objetivo diseñar tecnología que emule la inteligencia humana. 
+            Esto significa que, mediante la creación de algoritmos y sistemas especializados, las máquinas pueden llevar a cabo procesos 
+            propios de la inteligencia humana, como aprender, razonar o autocorregirse2.</p>
+        </div>
+
+        <div>
+          <img src="static\media\images\Fondo.png" alt="">
+        </div>
+
+        <div>
+          <p>Es decir, La Inteligencia Artificial (IA) es una disciplina que busca crear máquinas capaces de imitar la inteligencia humana. 
+            Algunas tecnologías de IA populares incluyen la generación de lenguaje natural, reconocimiento de voz, agentes virtuales 
+            y plataformas de aprendizaje automático. En el futuro, se espera una mayor regulación de la IA y avances en la Inteligencia 
+            Artificial Generativa.</p>
+        </div>
+
+      </ul>
+    </section>
+    <section id="comments">
+      <a href="{% url 'dejar_comentario' %}" class="bi bi-chat-right-text"> dejanos tu comentario!</a>
+    </section>
+  </main>
+
+  <footer>
+    <section>
+      <p>CaC FS PYTHON 2023</p>
+      <p><strong>Comisión 23507</strong></p>
+      <p><i>Grupo 19</i></p>
+    </section>
+
+    <section>
+      <article>
+        <span>Matías Andrés Sustersic</span>
+        <a class="bi bi-envelope" href="mailto:msuster93@gmail.com?$subject=Contacto%20desde%20IAs list"
+          title="Email de Matías Andrés Sustersic"></a>
+        <a class="bi bi-whatsapp" href="https://api.whatsapp.com/send?phone=5491123917168" target="_blank"
+          title="Whatsapp de Matías Andrés Sustersic"></a>
+        <a class="bi bi-github iconRed iconRedG icon tresSeg" href="https://github.com/Msustersic" target="_blank"
+          title="GitHub"></a>
+      </article>
+      <article>
+        <span>Mario Rubén Lerman</span>
+        <a class="bi bi-envelope" href="mailto:mariolerman@gmail.com?$subject=Contacto%20desde%20IAs list"
+          title="Email de Mario Rubén Lerman"></a>
+        <a class="bi bi-whatsapp"
+          href="https://api.whatsapp.com/send?phone=5491145777353&text=Contacto%20desde%20IAs list" target="_blank"
+          title="Whatsapp de Mario Lerman"></a>
+        <a class="bi bi-github iconRed iconRedG icon tresSeg" href="https://github.com/Marior70" target="_blank"
+          title="GitHub"></a>
+      </article>
+      <article>
+        <span>Alejo Podbielski</span>
+        <a class="bi bi-envelope" href="mailto:valentinpodbielski71@gmail.com?$subject=Contacto%20desde%20IAs list"
+          title="Email de Alejo Podbielski"></a>
+        <a class="bi bi-whatsapp" href="https://api.whatsapp.com/send?phone=5491162037019" target="_blank"
+          title="Whatsapp de Alejo Podbielski"></a>
+        <a class="bi bi-github iconRed iconRedG icon tresSeg" href="https://github.com/Valentinpodbielski"
+          target="_blank" title="GitHub"></a>
+      </article>
+      <article>
+        <span>Julián Albornoz</span>
+        <a class="bi bi-envelope" href="mailto:julian.alborno05@gmail.com?$subject=Contacto%20desde%20IAs list"
+          title="Email de Julián Albornoz"></a>
+        <a class="bi bi-whatsapp" href="https://api.whatsapp.com/send?phone=5491150051266" target="_blank"
+          title="Whatsapp de Julián Albornoz"></a>
+        <a class="bi bi-github iconRed iconRedG icon tresSeg" href="https://github.com/julianliyo" target="_blank"
+          title="GitHub"></a>
+      </article>
+    </section>
+    <img src="{% static './media/icons/logo_tecno.png' %}" alt="Logo de CSS-3" style="width: 50px;height: 33.5px;">
+  </footer>
+  <script src="{% static './js/index.js' %}"></script>
+  <script src="{% static './js/index/idxIAsList.js' %}" type="module"></script>
+
+</body>
+
+</html>
